@@ -1,9 +1,6 @@
-import React from 'react'
 
-import { Game, Platform } from '../hooks/useGames'
-//import { Card, CardBody } from '@chakra-ui/react/card'
 import { CardBody, Card, Heading, Image, Text, HStack } from '@chakra-ui/react'
-import { space } from '@chakra-ui/react'
+import { Game } from './GameGrid'
 import PlatformIconList from './PlatformIconList'
 import CriticsScore from './CriticsScore'
 import getCroppedImageUrl from '../services/image-url'
@@ -22,7 +19,7 @@ const GameCard = ({ game }: Props) => {
                 {/* {game.parent_platforms.map(({ platform }) => <Text>{platform.name}</Text>)} */}
                 <HStack justifyContent='space-between'>
                     <PlatformIconList platforms={game.parent_platforms.map(({ platform }) => platform)} />
-                    <Text fontSize='sm'>Metacritics: <CriticsScore criticsScore={game.metacritic} /></Text>
+                    <Text fontSize='sm'>Score: <CriticsScore criticsScore={game.metacritic} /></Text>
                 </HStack>
 
             </CardBody>
